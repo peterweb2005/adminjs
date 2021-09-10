@@ -1,5 +1,5 @@
 import { ResourceOptions, FeatureType, PropertyOptions } from 'adminjs'
-import blogFeature from '@softwarebrothers/adminjs-blog'
+//import blogFeature from '@softwarebrothers/adminjs-blog'
 import { ContentParent } from '../../parents'
 
 
@@ -18,7 +18,7 @@ export const BlogPostResource: ResourceOptions = {
 }
 
 export const BlogPostFeatures: Array<FeatureType> = [
-  blogFeature({
+  /*blogFeature({
     properties: {
       title: 'title',
       body: 'body',
@@ -43,5 +43,5 @@ export const BlogPostFeatures: Array<FeatureType> = [
       resourceId: 'Tags',
       nameColumn: 'name',
     },
-  }),
+  }),*/
 ]

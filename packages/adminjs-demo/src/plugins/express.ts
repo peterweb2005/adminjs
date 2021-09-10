@@ -1,4 +1,4 @@
-import { buildAuthenticatedRouter } from '@adminjs/express'
+import AdminJSExpress from '@adminjs/express'
 
 import AdminJS from 'adminjs'
 import express from 'express'
@@ -11,9 +11,9 @@ export const listen = (
   authenticate,
   port = PORT,
 ): void => {
-  const router = buildAuthenticatedRouter(admin, {
+  const router = AdminJSExpress.buildAuthenticatedRouter(admin, {
     cookieName: process.env.COOKIE_NAME,
-    cookiePassword: process.env.COOKIE_PASSWORD,
+    cookiePassword: process.env.COOKIE_PASSWORD || '',
     authenticate,
   }, null, {
     resave: false,

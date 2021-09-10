@@ -8,12 +8,30 @@ const {
   SYNC,
   POSTGRES_HOST,
 } = process.env
-const sequelizeUrl = [
+const dbConfig = {
+  HOST: "localhost",
+  USER: 'adminjs-demo',
+  PASSWORD: 'p@ssw0rd',
+  DB: "adminjs-demo",
+  dialect: "mysql",
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
+};
+/*const sequelizeUrl = [
   'postgres://', POSTGRES_USER, ':', POSTGRES_PASSWORD, '@', POSTGRES_HOST, ':', POSTGRES_PORT,
   '/', POSTGRES_DATABASE,
-].join('')
+].join('')*/
 
-export const sequelize = new Sequelize(sequelizeUrl, {
+export const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
+  host: dbConfig.HOST,
+  dialect: 'mysql',
+  dialectOptions: {
+    // Your mysql2 options here
+  },
   logging: false,
 })
 
